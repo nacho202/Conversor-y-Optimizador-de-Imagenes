@@ -3,6 +3,7 @@
 Una aplicación web moderna y eficiente para convertir y optimizar imágenes en múltiples formatos, construida con tecnologías web nativas.
 
 ![ImageOptimize](https://img.shields.io/badge/status-active-success.svg)
+![Railway](https://img.shields.io/badge/Railway-0B0D0E?logo=railway&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
@@ -22,11 +23,11 @@ Una aplicación web moderna y eficiente para convertir y optimizar imágenes en 
 
 ## 🚀 Demo en Vivo
 
-**🌐 Live Demo**: [Próximamente en Vercel]
+**🌐 Live Demo**: [Próximamente en Railway]
 
 **💻 Desarrollo Local**: Abre `index.html` en tu navegador favorito para probar la aplicación.
 
-> 📘 **¿Quieres desplegarlo?** Lee la [Guía de Despliegue](DEPLOY.md) para subirlo a GitHub y Vercel en 5 minutos.
+**🚂 ¿Quieres desplegarlo?** Lee [DEPLOY-RAILWAY.md](DEPLOY-RAILWAY.md) o ejecuta `setup-railway.bat` (Windows)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -94,7 +95,7 @@ Una aplicación web moderna y eficiente para convertir y optimizar imágenes en 
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone [tu-repositorio]
+git clone https://github.com/TU-USUARIO/imageoptimize.git
 
 # Navegar al directorio
 cd imageoptimize
@@ -102,6 +103,22 @@ cd imageoptimize
 # Abrir en el navegador
 # Simplemente abre index.html en tu navegador favorito
 ```
+
+### Despliegue en Railway
+```bash
+# 1. Sube tu código a GitHub
+git init
+git add .
+git commit -m "Initial commit"
+git push
+
+# 2. Ve a railway.app
+# 3. New Project → Deploy from GitHub repo
+# 4. Selecciona tu repositorio
+# 5. ¡Listo! Railway lo desplegará automáticamente
+```
+
+Para una guía completa, ejecuta `setup-railway.bat` o lee [DEPLOY-RAILWAY.md](DEPLOY-RAILWAY.md)
 
 ### Uso
 1. **Cargar Imágenes**: Arrastra archivos o haz clic en la zona de carga
@@ -144,13 +161,17 @@ cd imageoptimize
 ### Arquitectura
 ```
 imageoptimize/
-├── index.html          # Estructura HTML
-├── style.css           # Estilos y animaciones
-├── script.js           # Lógica de la aplicación
-├── favicon.svg         # Ícono de la aplicación
-├── package.json        # Metadatos del proyecto
-├── .gitignore          # Archivos ignorados por Git
-└── README.md          # Documentación
+├── index.html              # Estructura HTML
+├── style.css               # Estilos y animaciones
+├── script.js               # Lógica de la aplicación
+├── favicon.svg             # Ícono de la aplicación
+├── package.json            # Metadatos del proyecto
+├── railway.json            # Configuración de Railway
+├── nixpacks.toml           # Build configuration
+├── Procfile                # Comando de inicio
+├── .gitignore              # Archivos ignorados por Git
+├── README.md               # Documentación
+└── DEPLOY-RAILWAY.md       # Guía de despliegue
 ```
 
 ### Estado de la Aplicación
@@ -186,6 +207,23 @@ state = {
 - Reducir el peso de imágenes para redes sociales
 - Optimizar fotos para blogs y artículos
 - Preparar imágenes para newsletters
+
+## 🚂 Despliegue en Railway
+
+Este proyecto está configurado para desplegarse fácilmente en Railway:
+
+### Características de Railway:
+- ✅ **Setup automático**: Railway detecta la configuración automáticamente
+- ✅ **Deploy en segundos**: Push a GitHub y Railway despliega
+- ✅ **$5 gratis al mes**: Suficiente para proyectos de portfolio
+- ✅ **HTTPS incluido**: Dominio seguro automático
+- ✅ **Logs en tiempo real**: Monitorea tu aplicación fácilmente
+
+### Archivos de Configuración:
+- `railway.json` - Configuración principal
+- `nixpacks.toml` - Build process
+- `Procfile` - Comando de inicio
+- `DEPLOY-RAILWAY.md` - Guía detallada
 
 ## 🚀 Mejoras Futuras
 
