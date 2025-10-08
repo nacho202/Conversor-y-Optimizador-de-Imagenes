@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convierte y optimiza hasta 30 imágenes simultáneamente a WebP, AVIF, JPEG y PNG. Procesamiento local y rápido.">
+    <meta name="author" content="Tu Nombre">
+    <title>ImageOptimize - Conversor de Imágenes Moderno</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                    <path d="M12 15L20 10L28 15V25L20 30L12 25V15Z" stroke="white" stroke-width="2" fill="none"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>ImageOptimize</h1>
+            </div>
+            <p class="subtitle">Convierte y optimiza hasta 30 imágenes simultáneamente</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Zone -->
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-icon">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="35" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                        <path d="M40 25V55M25 40H55" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2>Arrastra tus imágenes aquí</h2>
+                <p>o haz clic para seleccionar</p>
+                <p class="file-info">Hasta 30 archivos • PNG, JPG, JPEG, GIF, BMP</p>
+                <input type="file" id="fileInput" accept="image/*" multiple hidden>
+            </div>
+
+            <!-- Format Selection -->
+            <div class="format-section" id="formatSection" style="display: none;">
+                <h3>Selecciona el formato de salida</h3>
+                <div class="format-options">
+                    <label class="format-option">
+                        <input type="radio" name="format" value="webp" checked>
+                        <div class="format-card">
+                            <div class="format-name">WebP</div>
+                            <div class="format-desc">Compresión moderna, amplio soporte</div>
+                        </div>
+                    </label>
+                    <label class="format-option">
+                        <input type="radio" name="format" value="avif">
+                        <div class="format-card">
+                            <div class="format-name">AVIF</div>
+                            <div class="format-desc">Máxima compresión, último estándar</div>
+                        </div>
+                    </label>
+                    <label class="format-option">
+                        <input type="radio" name="format" value="jpeg">
+                        <div class="format-card">
+                            <div class="format-name">JPEG</div>
+                            <div class="format-desc">Compatible universalmente</div>
+                        </div>
+                    </label>
+                    <label class="format-option">
+                        <input type="radio" name="format" value="png">
+                        <div class="format-card">
+                            <div class="format-name">PNG</div>
+                            <div class="format-desc">Sin pérdida, con transparencia</div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="quality-control">
+                    <label for="quality">
+                        <span>Calidad de compresión</span>
+                        <span id="qualityValue">80%</span>
+                    </label>
+                    <input type="range" id="quality" min="10" max="100" value="80">
+                </div>
+
+                <button class="btn-primary" id="convertBtn">
+                    <span>Convertir Imágenes</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Images List -->
+            <div class="images-container" id="imagesContainer"></div>
+
+            <!-- Download Section -->
+            <div class="download-section" id="downloadSection" style="display: none;">
+                <div class="stats-summary">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalImages">0</div>
+                        <div class="stat-label">Imágenes procesadas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalSaved">0 KB</div>
+                        <div class="stat-label">Espacio ahorrado</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="compressionRate">0%</div>
+                        <div class="stat-label">Reducción promedio</div>
+                    </div>
+                </div>
+
+                <button class="btn-download" id="downloadAllBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3V16M12 16L16 12M12 16L8 12M4 17V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span id="downloadBtnText">Descargar Todas</span>
+                </button>
+                <p class="download-info" id="downloadInfo"></p>
+
+                <button class="btn-reset" id="resetBtn">Nueva Conversión</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Creado con 💜 para optimizar tus imágenes</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

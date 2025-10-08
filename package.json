@@ -1,0 +1,27 @@
+{
+  "name": "imageoptimize",
+  "version": "1.0.0",
+  "description": "Conversor y optimizador de imágenes moderno con soporte para WebP, AVIF, JPEG y PNG",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo \"Abre index.html en tu navegador\" && start index.html",
+    "preview": "npx serve ."
+  },
+  "keywords": [
+    "image",
+    "converter",
+    "optimizer",
+    "webp",
+    "avif",
+    "compression",
+    "portfolio"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/imageoptimize"
+  }
+}
+
