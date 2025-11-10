@@ -12,21 +12,24 @@ Tu proyecto está listo para subir a internet GRATIS con GitHub Pages.
 
 2. Ingresa tu usuario de GitHub cuando te lo pida
 
-3. El script hace todo automáticamente
+3. Ingresa el nombre de tu repositorio cuando te lo pida
 
-4. Sigue las instrucciones finales que aparecen
+4. El script hace todo automáticamente
 
-5. Espera 5 minutos
+5. Sigue las instrucciones finales que aparecen
 
-6. ¡Tu sitio estará en línea!
+6. Espera 5 minutos
+
+7. ¡Tu sitio estará en línea!
 
 
 🌐 TU URL SERÁ:
 ─────────────────────────────────────────────────────────────
 
-https://tu-usuario.github.io/imageoptimize/
+https://tu-usuario.github.io/nombre-de-tu-repo/
 
-(Reemplaza "tu-usuario" con tu nombre de usuario de GitHub)
+Ejemplo con tu repo:
+https://tu-usuario.github.io/Conversor-y-Optimizador-de-Imagenes/
 
 
 💡 ¿NECESITAS MÁS AYUDA?

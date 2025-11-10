@@ -24,6 +24,9 @@ echo.
 set /p USUARIO="Ingresa tu nombre de usuario de GitHub: "
 echo.
 
+set /p REPO="Ingresa el nombre de tu repositorio (Conversor-y-Optimizador-de-Imagenes): "
+echo.
+
 echo 📋 Paso 1: Inicializando Git...
 git init 2>nul
 if %errorlevel% neq 0 (
@@ -49,10 +52,10 @@ if %errorlevel% neq 0 (
 echo.
 
 echo 📋 Paso 4: Conectando con GitHub...
-git remote add origin https://github.com/%USUARIO%/imageoptimize.git 2>nul
+git remote add origin https://github.com/%USUARIO%/%REPO%.git 2>nul
 if %errorlevel% neq 0 (
     echo ⚠️  Remote ya existe, actualizando...
-    git remote set-url origin https://github.com/%USUARIO%/imageoptimize.git
+    git remote set-url origin https://github.com/%USUARIO%/%REPO%.git
 )
 echo ✅ Remote configurado
 echo.
@@ -71,7 +74,7 @@ if %errorlevel% neq 0 (
     echo    - Tu usuario es correcto: %USUARIO%
     echo.
     echo Crea el repositorio en: https://github.com/new
-    echo    Nombre: imageoptimize
+    echo    Nombre: %REPO%
     echo    Public ✅
     echo.
     pause
@@ -83,7 +86,7 @@ echo ═════════════════════════
 echo   ✅ CÓDIGO SUBIDO A GITHUB
 echo ═══════════════════════════════════════════════════════════════
 echo.
-echo 🌐 Tu repo: https://github.com/%USUARIO%/imageoptimize
+echo 🌐 Tu repo: https://github.com/%USUARIO%/%REPO%
 echo.
 echo.
 echo ═══════════════════════════════════════════════════════════════
@@ -92,7 +95,7 @@ echo ═════════════════════════
 echo.
 echo SIGUE ESTOS PASOS:
 echo.
-echo 1. Ve a: https://github.com/%USUARIO%/imageoptimize/settings/pages
+echo 1. Ve a: https://github.com/%USUARIO%/%REPO%/settings/pages
 echo.
 echo 2. En "Source":
 echo    - Branch: main
@@ -102,11 +105,11 @@ echo.
 echo 3. Espera 2-3 minutos
 echo.
 echo 4. Tu sitio estará en:
-echo    https://%USUARIO%.github.io/imageoptimize/
+echo    https://%USUARIO%.github.io/%REPO%/
 echo.
 echo.
 echo 💡 CONSEJO: Guarda esta URL para tu portfolio
 echo.
 pause
-start https://github.com/%USUARIO%/imageoptimize/settings/pages
+start https://github.com/%USUARIO%/%REPO%/settings/pages
 

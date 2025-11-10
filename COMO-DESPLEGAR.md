@@ -8,13 +8,15 @@
 
 2. **Ingresa tu usuario de GitHub** cuando te lo pida
 
-3. **El script hará todo automáticamente:**
+3. **Ingresa el nombre de tu repositorio** (ejemplo: Conversor-y-Optimizador-de-Imagenes)
+
+4. **El script hará todo automáticamente:**
    - Inicializa Git
    - Agrega tus archivos
    - Sube a GitHub
    - Te guía para activar Pages
 
-4. **Sigue las últimas 3 instrucciones** que aparecen en pantalla
+5. **Sigue las últimas 3 instrucciones** que aparecen en pantalla
 
 ---
 
