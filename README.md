@@ -23,11 +23,13 @@ Una aplicación web moderna y eficiente para convertir y optimizar imágenes en 
 
 ## 🚀 Demo en Vivo
 
-**🌐 Live Demo**: [Próximamente en Railway]
+**🌐 Live Demo**: [Próximamente]
 
 **💻 Desarrollo Local**: Abre `index.html` en tu navegador favorito para probar la aplicación.
 
-**🚂 ¿Quieres desplegarlo?** Lee [DEPLOY-RAILWAY.md](DEPLOY-RAILWAY.md) o ejecuta `setup-railway.bat` (Windows)
+### 🚀 Desplegar en GitHub Pages (GRATIS):
+- 🤖 **Script automático**: Ejecuta `DEPLOY-GITHUB-PAGES.bat`
+- 📘 **Guía completa**: Lee [COMO-DESPLEGAR.md](COMO-DESPLEGAR.md)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -161,17 +163,20 @@ Para una guía completa, ejecuta `setup-railway.bat` o lee [DEPLOY-RAILWAY.md](D
 ### Arquitectura
 ```
 imageoptimize/
-├── index.html              # Estructura HTML
-├── style.css               # Estilos y animaciones
-├── script.js               # Lógica de la aplicación
-├── favicon.svg             # Ícono de la aplicación
-├── package.json            # Metadatos del proyecto
-├── railway.json            # Configuración de Railway
-├── nixpacks.toml           # Build configuration
-├── Procfile                # Comando de inicio
-├── .gitignore              # Archivos ignorados por Git
-├── README.md               # Documentación
-└── DEPLOY-RAILWAY.md       # Guía de despliegue
+├── index.html                  # Estructura HTML
+├── style.css                   # Estilos y animaciones
+├── script.js                   # Lógica de la aplicación
+├── favicon.svg                 # Ícono de la aplicación
+├── package.json                # Metadatos del proyecto
+├── .gitignore                  # Archivos ignorados por Git
+├── README.md                   # Documentación
+│
+├── 📁 .github/workflows/
+│   └── deploy.yml              # GitHub Actions config
+│
+├── 🚀 Despliegue:
+├── COMO-DESPLEGAR.md           # Guía completa de GitHub Pages
+└── DEPLOY-GITHUB-PAGES.bat     # Script automático Windows
 ```
 
 ### Estado de la Aplicación
@@ -208,22 +213,33 @@ state = {
 - Optimizar fotos para blogs y artículos
 - Preparar imágenes para newsletters
 
-## 🚂 Despliegue en Railway
+## 🌐 Despliegue en GitHub Pages
 
-Este proyecto está configurado para desplegarse fácilmente en Railway:
+Este proyecto está configurado para desplegarse en **GitHub Pages (100% GRATIS)**:
 
-### Características de Railway:
-- ✅ **Setup automático**: Railway detecta la configuración automáticamente
-- ✅ **Deploy en segundos**: Push a GitHub y Railway despliega
-- ✅ **$5 gratis al mes**: Suficiente para proyectos de portfolio
-- ✅ **HTTPS incluido**: Dominio seguro automático
-- ✅ **Logs en tiempo real**: Monitorea tu aplicación fácilmente
+### ⚡ Inicio Rápido:
 
-### Archivos de Configuración:
-- `railway.json` - Configuración principal
-- `nixpacks.toml` - Build process
-- `Procfile` - Comando de inicio
-- `DEPLOY-RAILWAY.md` - Guía detallada
+**Opción 1 - Script Automático (Recomendado):**
+```bash
+# Haz doble clic en:
+DEPLOY-GITHUB-PAGES.bat
+```
+
+**Opción 2 - Manual:**
+1. Sube el código a GitHub
+2. Ve a Settings → Pages
+3. Activa Pages (Source: main, Folder: /)
+4. Espera 5 minutos
+5. Tu sitio estará en: `https://tu-usuario.github.io/imageoptimize/`
+
+📘 **Guía completa**: [COMO-DESPLEGAR.md](COMO-DESPLEGAR.md)
+
+### ✅ Por qué GitHub Pages:
+- 🆓 **100% gratis** para siempre (sin tarjeta de crédito)
+- 🔒 **HTTPS automático** incluido
+- 🚀 **Deploy automático** con cada push
+- 🌐 **CDN global** para carga rápida
+- 💼 **Perfecto para portfolios**
 
 ## 🚀 Mejoras Futuras
 
